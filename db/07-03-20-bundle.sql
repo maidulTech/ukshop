@@ -1,0 +1,248 @@
+/*
+SQLyog Professional v13.1.1 (64 bit)
+MySQL - 10.2.10-MariaDB : Database - AZURADB_BETA
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*Table structure for table `SLS_BUNDLE` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE`;
+
+CREATE TABLE `SLS_BUNDLE` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` int(11) DEFAULT NULL,
+  `COUPON_CODE` varchar(20) DEFAULT NULL,
+  `BUNDLE_NAME` varchar(200) DEFAULT NULL,
+  `BUNDLE_NAME_PUBLIC` varchar(200) DEFAULT NULL,
+  `VALIDITY_FROM` date DEFAULT NULL,
+  `VALIDITY_TO` date DEFAULT NULL,
+  `F_A_LIST_NO` int(11) DEFAULT NULL,
+  `F_B_LIST_NO` int(11) DEFAULT NULL,
+  `F_BUNDLE_TYPE` int(11) DEFAULT NULL,
+  `P_AMOUNT` float DEFAULT 0,
+  `P2_AMOUNT` float DEFAULT 0,
+  `P_SS` float DEFAULT 0,
+  `P_SM` float DEFAULT 0,
+  `P_AIR` float DEFAULT 0,
+  `P_SEA` float DEFAULT 0,
+  `X1_QTY` int(11) DEFAULT 0,
+  `X2_QTY` int(11) DEFAULT 0,
+  `ZA1` float DEFAULT 0,
+  `ZA2` float DEFAULT 0,
+  `ZA3` float DEFAULT 0,
+  `R_AMOUNT` float DEFAULT 0,
+  `R2_AMOUNT` float DEFAULT 0,
+  `R_SS` float DEFAULT 0,
+  `R_SM` float DEFAULT 0,
+  `R_AIR` float DEFAULT 0,
+  `R_SEA` float DEFAULT 0,
+  `Y1_QTY` int(11) DEFAULT 0,
+  `Y2_QTY` int(11) DEFAULT 0,
+  `ZB1` float DEFAULT NULL,
+  `ZB2` float DEFAULT NULL,
+  `ZB3` float DEFAULT NULL,
+  `STATUS` int(2) DEFAULT 1,
+  `IMAGE` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE` */
+
+insert  into `SLS_BUNDLE`(`PK_NO`,`CODE`,`COUPON_CODE`,`BUNDLE_NAME`,`BUNDLE_NAME_PUBLIC`,`VALIDITY_FROM`,`VALIDITY_TO`,`F_A_LIST_NO`,`F_B_LIST_NO`,`F_BUNDLE_TYPE`,`P_AMOUNT`,`P2_AMOUNT`,`P_SS`,`P_SM`,`P_AIR`,`P_SEA`,`X1_QTY`,`X2_QTY`,`ZA1`,`ZA2`,`ZA3`,`R_AMOUNT`,`R2_AMOUNT`,`R_SS`,`R_SM`,`R_AIR`,`R_SEA`,`Y1_QTY`,`Y2_QTY`,`ZB1`,`ZB2`,`ZB3`,`STATUS`,`IMAGE`) values 
+('1',NULL,NULL,'Buy 1 get 1 free','Buy 1 get 1 free','2020-12-22','1970-01-01','2','2','6','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','1',NULL),
+('3',NULL,NULL,'Buy Complex','Buy Complex','2020-12-22','2020-12-24','2','2','10','100','0','0','0','0','0','2','1','0','50','50','0','0','0','0','0','0','0','0','0','0','0','1',NULL),
+('4',NULL,NULL,'Buy 3 get  1 25% price','Buy Three and get 4th at quarter price','2020-12-22','2020-12-24','2','2','7','0','0','0','0','0','0','3','0','0','0','0','0','0','0','0','0','0','1','0','75','0','0','1',NULL),
+('5',NULL,NULL,'500 any 2','Buy 500RM for any 2 product','2020-12-23','2021-01-01',NULL,NULL,'8','500','0','0','0','0','0','2','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1',NULL),
+('7',NULL,NULL,'Buy RM1000 worth cast iron pot and get 1 Fridge Magnet Free','Buy RM1000 worth cast iron pot and get 1 Fridge Magnet Free','2021-02-01','2021-02-28','10','3','12','1000','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','100','0','0','1',NULL),
+('8',NULL,NULL,'Buy any 6 Portmeirion 10 inch plate for RM 289','Buy any 6 Portmeirion 10 inch plate for RM 289','2021-02-01','2022-02-28','9',NULL,'8','289','319','40','0','339','0','6','0','0','0','0','0','0',NULL,NULL,NULL,NULL,'0','0','0','0','0','1','/media/images/bundle/8/bundle_02032021_603e50b745b75.jpg'),
+('10',NULL,NULL,'ProCook Cast Iron 2 for RM999','ProCook Cast Iron Casserole 24cm Round & 28cm Shallow Casserole for RM999','2021-03-01','2021-12-31','12','4','8','579','629','70','0','450','0','1','0','0','0','0','420','460',NULL,NULL,NULL,NULL,'1','0','0','0','0','1','/media/images/bundle/10/bundle_08032021_60460dc5d0d5b.jpg'),
+('11',NULL,NULL,'Furla Gold Body and flap for RM499','Furla Gold Body and Flap (price up to 199) for RM499','2020-11-01','2021-12-31','13','5','8','499','549','10','0','0','0','1','0','0','0','0','0','0',NULL,NULL,NULL,NULL,'1','0','100','0','0','1','/media/images/bundle/11/bundle_08032021_604617ec321ce.jpeg');
+
+/*Table structure for table `SLS_BUNDLE_PRIMARY_SET` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE_PRIMARY_SET`;
+
+CREATE TABLE `SLS_BUNDLE_PRIMARY_SET` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` varchar(50) DEFAULT NULL,
+  `PRIMARY_SET_NAME` varchar(200) DEFAULT NULL,
+  `COMMENTS` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE_PRIMARY_SET` */
+
+insert  into `SLS_BUNDLE_PRIMARY_SET`(`PK_NO`,`CODE`,`PRIMARY_SET_NAME`,`COMMENTS`) values 
+('7',NULL,'LC Mugs','Le Creset Mugs'),
+('8',NULL,'Utensils','Utensils'),
+('9',NULL,'PORTMEIRION  SECONDS DINNER PLATE 10 INCH','PORTMEIRION  SECONDS DINNER PLATE 10 INCH'),
+('10',NULL,'Any LC cast iron pot','Any LC cast iron pot'),
+('11',NULL,'ProCook Cast Iron 2 for RM999','ProCook Cast Iron 2 for RM999'),
+('12',NULL,'28cm Shallow Casserole','2 for 999'),
+('13',NULL,'Furla Metropolis Gold Body','Furla Metropolis Gold Body');
+
+/*Table structure for table `SLS_BUNDLE_PRIMARY_SET_DTL` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE_PRIMARY_SET_DTL`;
+
+CREATE TABLE `SLS_BUNDLE_PRIMARY_SET_DTL` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` int(11) DEFAULT NULL,
+  `F_SLS_BUNDLE_PRIMARY_SET_NO` int(11) DEFAULT NULL,
+  `F_PRD_VARIANT_NO` int(11) DEFAULT NULL,
+  `PRD_VARIANT_NAME` varchar(200) DEFAULT NULL,
+  `SKUID` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE_PRIMARY_SET_DTL` */
+
+insert  into `SLS_BUNDLE_PRIMARY_SET_DTL`(`PK_NO`,`CODE`,`F_SLS_BUNDLE_PRIMARY_SET_NO`,`F_PRD_VARIANT_NO`,`PRD_VARIANT_NAME`,`SKUID`) values 
+('11',NULL,'7','229','LC COFFEE MUG - Fig - 400ml','LCMU102101'),
+('12',NULL,'7','230','LC COFFEE MUG - SATIN PINK - 400ml','LCMU102102'),
+('13',NULL,'7','232','LC COFFEE MUG - MIST GREY - 400ml','LCMU102104'),
+('14',NULL,'8','369','JOSEPH JOSEPH UTENSIL SET - MULTI - 5 PIECE','JJUT109101'),
+('15',NULL,'8','370','JOSEPH JOSEPH UTENSIL SET - OPAL - 5 PIECE','JJUT109102'),
+('16',NULL,'8','417','JOSEPH JOSEPH UTENSIL SET DOORSTORE  - MULTI - 4 PIECE','JJUT109103'),
+('17',NULL,'10','155','LC CLASSIC SHALLOW CASSEROLE - Flint - 30cm','LCSC101107'),
+('18',NULL,'10','156','CLASSIC SHALLOW CASSEROLE - Ultra Violet - 30cm','LCSC101108'),
+('19',NULL,'10','158','LC CLASSIC SHALLOW CASSEROLE - Rosemary - 30cm','LCSC103110'),
+('20',NULL,'10','185','LC Classic Round Casserole - OCEAN - 28cm','LCRC102101'),
+('21',NULL,'10','334','LC CLASSIC OVAL CASSEROLE - OCEAN - 31 CM','LCOC102101'),
+('22',NULL,'9','833','PORTMEIRION BOTANIC GARDEN SECONDS DINNER PLATE 10 INCH - SUNFLOWER','PODP101101'),
+('23',NULL,'9','835','PORTMEIRION BOTANIC GARDEN SECONDS  DINNER PLATE 10 INCH - SWEET PEA','PODP101102'),
+('24',NULL,'9','836','PORTMEIRION BOTANIC GARDEN SECONDS DINNER PLATE 10 INCH - HYDRANGEA','PODP101103'),
+('25',NULL,'9','837','PORTMEIRION BOTANIC GARDEN SECONDS DINNER PLATE 10 INCH - FOXGLOVE','PODP101104'),
+('26',NULL,'9','838','PORTMEIRION BOTANIC GARDEN SECONDS DINNER PLATE 10 INCH - PINK PARROT TULIP','PODP101105'),
+('27',NULL,'9','1001','PORTMEIRION BOTANIC GARDEN SECONDS  DINNER PLATE 10 INCH - FLOWERING ALMOND','PODP101107'),
+('28',NULL,'9','1029','PORTMEIRION BOTANIC GARDEN SECONDS  DINNER PLATE 10 INCH - LILY FLOWERED AZALEA','PODP101108'),
+('29',NULL,'12','338','PROCOOK SHALLOW CASSEROLE - GRADUATED RED - 28 CM','PCSC101101'),
+('30',NULL,'12','342','PROCOOK SHALLOW CASSEROLE - SATIN BLACK - 28 CM','PCSC101102'),
+('31',NULL,'12','343','PROCOOK SHALLOW CASSEROLE - CREAM - 28 CM','PCSC101103'),
+('32',NULL,'13','1046','FURLA 1000792 AMT METROPOLIS BODY- GOLD - ONE SIZE','FUCR117101');
+
+/*Table structure for table `SLS_BUNDLE_SECONDARY_SET` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE_SECONDARY_SET`;
+
+CREATE TABLE `SLS_BUNDLE_SECONDARY_SET` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` int(11) DEFAULT NULL,
+  `SECONDARY_SET_NAME` varchar(125) DEFAULT NULL,
+  `COMMENTS` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE_SECONDARY_SET` */
+
+insert  into `SLS_BUNDLE_SECONDARY_SET`(`PK_NO`,`CODE`,`SECONDARY_SET_NAME`,`COMMENTS`) values 
+('2',NULL,'Spatula','Spatula'),
+('3',NULL,'LC Fridge Magnet','LC Fridge Magnet'),
+('4',NULL,'24cm Round Casserole','2 for 999'),
+('5',NULL,'FURLA METROPOLIS FLAP (179 & 199)','FURLA METROPOLIS FLAP (179 & 199)');
+
+/*Table structure for table `SLS_BUNDLE_SECONDARY_SET_DTL` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE_SECONDARY_SET_DTL`;
+
+CREATE TABLE `SLS_BUNDLE_SECONDARY_SET_DTL` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` int(11) DEFAULT NULL,
+  `F_SLS_BUNDLE_SECONDARY_SET_NO` int(11) DEFAULT NULL,
+  `F_PRD_VARIANT_NO` int(11) DEFAULT NULL,
+  `PRD_VARIANT_NAME` varchar(200) DEFAULT NULL,
+  `SKUID` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE_SECONDARY_SET_DTL` */
+
+insert  into `SLS_BUNDLE_SECONDARY_SET_DTL`(`PK_NO`,`CODE`,`F_SLS_BUNDLE_SECONDARY_SET_NO`,`F_PRD_VARIANT_NO`,`PRD_VARIANT_NAME`,`SKUID`) values 
+('5',NULL,'2','353','LC SPATULA - Black - Medium','LCSP101101'),
+('6',NULL,'2','375','LC SPATULA - FLAME - Medium','LCSP101102'),
+('7',NULL,'3','126','FRIDGE MAGNET - Cerise - One Size','LCGA101101'),
+('8',NULL,'3','127','FRIDGE MAGNET - FLAME - One Size','LCGA101102'),
+('9',NULL,'3','128','FRIDGE MAGNET - Rosemary - One Size','LCGA101103'),
+('10',NULL,'3','129','FRIDGE MAGNET - Soleil - One Size','LCGA101104'),
+('11',NULL,'3','130','FRIDGE MAGNET - Ultra Violet - One Size','LCGA101105'),
+('12',NULL,'3','131','FRIDGE MAGNET - Deep Teal - One Size','LCGA101106'),
+('13',NULL,'4','337','PROCOOK ROUND CASSEROLE - SATIN BLACK - 24 CM','PCRC101101'),
+('14',NULL,'4','340','PROCOOK ROUND CASSEROLE - CREAM - 24 CM','PCRC101103'),
+('15',NULL,'4','341','PROCOOK ROUND CASSEROLE - GRADUATED RED - 24 CM','PCRC101104'),
+('16',NULL,'5','1048','FURLA METROPOLIS FLAP - CILIEGIA/ASFAL - 1039304','FUFL101101'),
+('17',NULL,'5','1049','FURLA METROPOLIS FLAP - CILIEGIA/PERLA - 1032829','FUFL101102'),
+('18',NULL,'5','1050','FURLA METROPOLIS FLAP - PERVINCA - K056EP0','FUFL101103'),
+('19',NULL,'5','1051','FURLA METROPOLIS FLAP - PINK','FUFL101104'),
+('20',NULL,'5','1054','FURLA METROPOLIS FLAP - CAMELIA - 963343','FUFL101107'),
+('21',NULL,'5','1055','FURLA METROPOLIS FLAP - PINKY - 783214','FUFL101108'),
+('22',NULL,'5','1056','FURLA METROPOLIS FLAP - GIACINTO - K056EP0','FUFL101109'),
+('23',NULL,'5','1057','FURLA METROPOLIS FLAP - FUXIA - 984287','FUFL101110'),
+('24',NULL,'5','1059','FURLA METROPOLIS FLAP - UNI TONI CAMELIA - K056EP0','FUFL101112'),
+('25',NULL,'5','1119','FURLA METROPOLIS FLAP - GIRANDOLA','FUFL101114'),
+('26',NULL,'5','1258','FURLA METROPOLIS FLAP - TONI TALCO - K056EP0','FUFL101116'),
+('27',NULL,'5','1322','FURLA METROPOLIS FLAP - LAVANDA - 978060','FUFL101122');
+
+/*Table structure for table `SLS_BUNDLE_TYPE` */
+
+DROP TABLE IF EXISTS `SLS_BUNDLE_TYPE`;
+
+CREATE TABLE `SLS_BUNDLE_TYPE` (
+  `PK_NO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODE` int(11) DEFAULT NULL,
+  `NAME` varchar(200) DEFAULT NULL,
+  `PUBLIC_NAME` varchar(200) DEFAULT NULL,
+  `P_AMOUNT` float DEFAULT 0,
+  `P2_AMOUNT` float DEFAULT NULL,
+  `P_SS` float DEFAULT NULL,
+  `P_SM` float DEFAULT NULL,
+  `P_SEA` float DEFAULT NULL,
+  `P_AIR` float DEFAULT NULL,
+  `X1_QTY` int(11) DEFAULT 0,
+  `X2_QTY` int(11) DEFAULT 0,
+  `ZA1` float DEFAULT 0,
+  `ZA2` float DEFAULT 0,
+  `ZA3` float DEFAULT 0,
+  `R_AMOUNT` float DEFAULT 0,
+  `R2_AMOUNT` float DEFAULT 0,
+  `R_SS` float DEFAULT 0,
+  `R_SM` float DEFAULT 0,
+  `R_SEA` float DEFAULT 0,
+  `R_AIR` float DEFAULT 0,
+  `Y1_QTY` int(11) DEFAULT 0,
+  `Y2_QTY` int(11) DEFAULT 0,
+  `ZB1` float DEFAULT 0,
+  `ZB2` float DEFAULT 0,
+  `ZB3` float DEFAULT 0,
+  `T_AMOUNT` float DEFAULT 0,
+  `T2_AMOUNT` float DEFAULT 0,
+  `Z1_QTY` int(11) DEFAULT 0,
+  `Z2_QTY` int(11) DEFAULT 0,
+  `ZC1` float DEFAULT 0,
+  `ZC2` float DEFAULT 0,
+  `ZC3` float DEFAULT 0,
+  PRIMARY KEY (`PK_NO`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `SLS_BUNDLE_TYPE` */
+
+insert  into `SLS_BUNDLE_TYPE`(`PK_NO`,`CODE`,`NAME`,`PUBLIC_NAME`,`P_AMOUNT`,`P2_AMOUNT`,`P_SS`,`P_SM`,`P_SEA`,`P_AIR`,`X1_QTY`,`X2_QTY`,`ZA1`,`ZA2`,`ZA3`,`R_AMOUNT`,`R2_AMOUNT`,`R_SS`,`R_SM`,`R_SEA`,`R_AIR`,`Y1_QTY`,`Y2_QTY`,`ZB1`,`ZB2`,`ZB3`,`T_AMOUNT`,`T2_AMOUNT`,`Z1_QTY`,`Z2_QTY`,`ZC1`,`ZC2`,`ZC3`) values 
+('6',NULL,'Buy X1qty  get Y1qty  free','Buy 1 Get 1 Free','0',NULL,NULL,NULL,NULL,NULL,'1','0','0','0','0','0','0','0','0','0','0','1','0','0','0','0','0','0','0','0','0','0','0'),
+('7',NULL,'Buy 2 get  1 25% price','Buy Two and get one at quarter price','0',NULL,NULL,NULL,NULL,NULL,'2','0','0','0','0','0','0','0','0','0','0','1','0','75','0','0','0','0','0','0','0','0','0'),
+('8',NULL,'Buy CERTAIN qty of items for a CETAIN amount of Money','Buy CERTAIN (ie. 6, X1) qty of items for a CETAIN amount (ie. RM 289, P) of Money','289','319','40','0','0','339','6','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0'),
+('9',NULL,'Buy 500amt get 1 half price','Buy 500amt get 2 quarter price price','500',NULL,NULL,NULL,NULL,NULL,'0','0','0','0','0','0','0','0','0','0','0','2','0','75','0','0','0','0','0','0','0','0','0'),
+('10',NULL,'Buy any lowest priced 6item  at 800amt and more 2 item at 50% discount and more item at 20% discount','Buy any lowest priced 6item  at 800amt and more 2 item at 50% discount and more item at 20% discount','800','900','10','0','0','100','6','0','0','50','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0'),
+('11',NULL,'Buy any 3 for 2 (cheapest one free)','3 for 2 (cheapest one free)','0','0','50','0','0','339','2','1','0','100','0','0','0',NULL,NULL,NULL,NULL,'0','0','0','0','0','0','0','0','0','0','0','0'),
+('12',NULL,'Buy P Amount worth of product from A list and Get Y1 Qty for Free','Spend 1000 and get 1 item free','1000',NULL,NULL,NULL,NULL,NULL,'0','0','0','0','0','0','0','0','0','0','0','1','0','100','0','0','0','0','0','0','0','0','0');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
